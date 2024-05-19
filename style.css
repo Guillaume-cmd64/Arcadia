@@ -1,0 +1,109 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; 
+}
+
+.header {
+    background-color: #4CAF50; /* Vert écologique */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.conteneur {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.images {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.images img {
+    width: 30%; 
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: #4CAF50; /* Vert écologique */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Media query pour les écrans de taille moyenne */
+@media screen and (max-width: 768px) {
+    .conteneur {
+        width: 90%; /* Ajustement de la largeur du conteneur */
+    }
+    
+    .images img {
+        width: 45%; /* 2 images par ligne sur les petits écrans */
+    }
+}
+/* Style pour le popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #D3E5D7; /* Couleur de fond verte */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Ombre portée */
+}
+.popup h2 {
+    color: #3E663E; /* Couleur de texte verte foncée */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.popup p {
+    color: #556B2F; /* Couleur de texte verte */
+    font-size: 16px;
+}
+
+.popup button {
+    background-color: #5C9562; /* Couleur de fond du bouton verte */
+    color: #FFFFFF; /* Couleur de texte blanche */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #3E7E3E; /* Couleur de fond du bouton verte foncée au survol */
+}
+
+/* Media query pour les petits écrans */
+@media screen and (max-width: 480px) {
+    .images img {
+        width: 100%; /* 1 image par ligne sur les écrans très petits */
+    }
+}
+.lang-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.lang-link {
+    margin-left: 10px;
+}
+
+.lang-link img {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+}
+

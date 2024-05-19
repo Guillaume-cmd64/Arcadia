@@ -1,0 +1,66 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application sécurisée</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Application sécurisée</h1>
+
+    <form id="registerForm">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Mot de passe" required>
+        <button type="submit">S'inscrire</button>
+    </form>
+
+    <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPassword" placeholder="Mot de passe" required>
+        <button type="submit">Se connecter</button>
+    </form>
+
+    <button id="protectedData">Données Protégées</button>
+
+    <script>
+        // S'inscrire
+        $('#registerForm').submit(function(event) {
+            event.preventDefault();
+            $.post('/register', { email: $('#email').val(), password: $('#password').val() }, function(response) {
+                alert(response.message);
+            }).fail(function(error) {
+                alert(error.responseJSON.message);
+            });
+        });
+
+        // Se connecter
+        $('#loginForm').submit(function(event) {
+            event.preventDefault();
+            $.post('/login', { email: $('#loginEmail').val(), password: $('#loginPassword').val() }, function(response) {
+                localStorage.setItem('token', response.token);
+                alert('Connexion réussie');
+            }).fail(function(error) {
+                alert(error.responseJSON.message);
+            });
+        });
+
+        // Accéder aux données protégées
+        $('#protectedData').click(function() {
+            const token = localStorage.getItem('token');
+            $.ajax({
+                url: '/protected',
+                type: 'GET',
+                headers: { 'Authorization': 'Bearer ' + token },
+                success: function(response) {
+                    alert(response.message);
+                },
+                error: function(error) {
+                    alert('Accès non autorisé');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

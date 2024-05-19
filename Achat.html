@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achat de tickets</title>
+</head>
+<body>
+
+<h1>Achat de tickets</h1>
+
+<form action="process_payment.php" method="post">
+    <label for="ticket_type">Type de ticket :</label>
+    <select name="ticket_type" id="ticket_type" onchange="calculatePrice()">
+        <option value="adulte">Adulte</option>
+        <option value="enfant">Enfant</option>
+        <option value="senior">Senior</option>
+    </select><br>
+    
+    <label for="quantite">Quantité :</label>
+    <input type="number" name="quantite" id="quantite" min="1" value="1" onchange="calculatePrice()"><br>
+    
+    <label for="prix">Prix total :</label>
+    <span id="prix">0</span> EUR<br>
+    
+    <label for="payment_method">Moyen de paiement :</label>
+    <select name="payment_method" id="payment_method">
+        <option value="stripe">Carte de crédit (Stripe)</option>
+        <option value="paypal">PayPal</option>
+    </select><br>
+    
+    <button type="submit">Acheter des tickets</button>
+</form>
+
+<script>
+function calculatePrice() {
+    var ticketType = document.getElementById('ticket_type').value;
+    var quantite = document.getElementById('quantite').value;
+    var prixTotal = 0;
+
+    // Calculer le prix en fonction du type de ticket
+    switch(ticketType) {
+        case 'adulte':
+            prixTotal = quantite * 10; // Prix pour un adulte
+            break;
+        case 'enfant':
+            prixTotal = 0; // Les enfants de moins de 12 ans sont gratuits
+            break;
+        case 'senior':
+            prixTotal = quantite * 5; // Moitié prix pour les seniors
+            break;
+    }
+
+    document.getElementById('prix').textContent = prixTotal;
+}
+</script>
+
+</body>
+</html>

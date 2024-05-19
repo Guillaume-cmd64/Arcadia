@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil - Zoo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue au Zoo</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="habitats.html">Habitats</a></li>
+            <li><a href="connexion.html">Connexion</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="lang-selector">
+            <a href="#" class="lang-link">
+                <img src="image/drapeaux/français.jpg" alt="Français">
+            </a>
+            <a href="#" class="lang-link">
+                <img src="image/drapeaux/français.jpg" alt="English">
+            </a>
+            <a href="#" class="lang-link">
+                <img src="image/drapeaux/allemand.jpg" alt="Deutsch">
+            </a>
+            <a href="#" class="lang-link">
+                <img src="image/drapeaux/espagne.jpg" alt="Español">
+            </a>
+            <a href="#" class="lang-link">
+                <img src="image/drapeaux/italie.jpg" alt="Italiano">
+            </a>
+        </div>
+        
+    </nav>
+    <section class="presentation">
+        <h2>Présentation du Zoo</h2>
+        <p> Bienvenue chez Arcadia, où l'aventure commence dès que vous franchissez nos portes.
+
+            Plongez dans un monde où les mystères de la faune et de la flore vous attendent à chaque coin de rue. Parcourez nos allées ombragées et laissez-vous émerveiller par la diversité des habitats que nous avons recréés avec soin, des forêts luxuriantes aux vastes plaines africaines, en passant par les contrées glacées de l'Arctique.
+            
+            Rencontrez nos habitants les plus fascinants, des majestueux éléphants aux agiles léopards, des énigmatiques primates aux gracieux flamants roses. Chaque animal a une histoire à raconter, un rôle crucial à jouer dans l'équilibre fragile de notre écosystème.
+            
+            Mais notre zoo ne se limite pas à la simple observation. Plongez au cœur de l'action avec nos visites guidées, nos séances interactives et nos expériences éducatives conçues pour éveiller la curiosité et encourager la préservation de notre planète.
+            
+            Que vous soyez seul, en famille ou en groupe, une visite au Zoo est bien plus qu'une simple sortie ; c'est une rencontre avec la nature dans toute sa splendeur, une invitation à explorer, à apprendre et à s'émerveiller.
+
+            A très vite, chez Arcadia ! 
+        </p>
+        <!-- Intégrer quelques images -->
+    </section>
+    <section class="services">
+        <h2>Nos Services</h2>
+        <ul>
+            <li>Restauration</li>
+            <li>Visite des habitats avec un guide (gratuit)</li>
+            <li>Visite du zoo en petit train</li>
+            <!-- Ajouter d'autres services ici -->
+        </ul>
+    </section>
+    <section class="habitats">
+        <h2>Nos Habitats</h2>
+        <ul>
+            <li>Forêt tropicale</li>
+            <li>Savane africaine</li>
+            <li>Zone arctique</li>
+            <!-- Ajouter d'autres habitats ici -->
+        </ul>
+    </section>
+    <section class="avis">
+        <h2>Avis du Zoo</h2>
+        <div class="avis-list">
+            
+            
+            <div class="avis-item">
+                <p>"Une journée fantastique passée en famille. Nous reviendrons certainement !"</p>
+                <span>- Pierre L.</span>
+            </div>
+            <!-- Ajouter d'autres avis ici -->
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Zoo</p>
+    </footer>
+    <!--Code du pop-up-->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Utilisation des données</h2>
+            <p>Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. Toutes les informations que vous nous fournissez seront traitées conformément à notre politique de confidentialité.</p>
+            <p>Veuillez sélectionner vos préference :</p>
+            <button onclick="acceptAll()">Accepter tout</button>
+            <button onclick="modifyPreferences()">Modifier les préferences</button>
+        </div>
+    </div>
+<script src="popup.js"></script>
+</body>
+</html>

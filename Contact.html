@@ -1,0 +1,56 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Zoo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Contactez-nous</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="habitats.html">Habitats</a></li>
+            <li><a href="connexion.html">Connexion</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="contact-form">
+        <h2>Formulaire de contact</h2>
+        <form action="send_email.php" method="post"></form>
+        <div>
+            <label for="name">Nom :</label>
+            <input type="text" id="name" required>
+        </div>
+        <div>
+            <label for="email">Email : </label>
+            <input type="email" id="email" required>
+        </div>
+        <div>
+            <label for="title">Titre :</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div>
+            <label for="message">Message :</label>
+            <terxtarea id="message" name="message" rows="4" required></terxtarea>
+        </div>
+        <button type="submit">Envoyer</button>
+    </form>
+    </section>
+    <footer>
+        <div>
+            <h3> Zoo Acardia </h3>
+            <p>Lieu Dit : Licornou D78, 35720 Pleugueneuc, France</p>
+        </div>
+        <div>
+            <h3> Téléphone </h3>
+            <p>+33 5 32 44 98 12</p>
+        </div>
+    </footer>
+    
+            

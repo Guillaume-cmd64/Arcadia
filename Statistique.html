@@ -1,0 +1,33 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation des habitats - Zoo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Consultation des habitats - Zoo</h1>
+    <div id="habitats">
+        <!-- Afficher ici les habitats avec leur nom et un bouton pour consulter -->
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Récupérer les données des habitats depuis le backend et les afficher
+            $.getJSON("/habitats", function(data) {
+                data.forEach(function(habitat) {
+                    $("#habitats").append("<div><h2>" + habitat.nom + "</h2><button class='consult' data-id='" + habitat._id + "'>Consulter</button></div>");
+                });
+            });
+
+            // Suivre les clics sur les boutons de consultation
+            $(document).on("click", ".consult", function() {
+                var habitatId = $(this).data("id");
+                $.post("/consult", { habitatId: habitatId });
+            });
+        });
+    </script>
+</body>
+</html>
